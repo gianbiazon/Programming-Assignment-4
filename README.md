@@ -15,12 +15,12 @@ Problem #1 - ECE BOARD EXAM PROBLEM: Using data wrangling and data visualization
           import numpy as np
           import matplotlib.pyplot as plt
 
-          Vsys = pd.read_excel('board2.xlsx') 
+          Vsys = pd.read_excel('board2.xlsx') #Reads the CSV File to be accessed in jupyter notebook
           Vsys
 
-          Vis = Vsys.loc[(Vsys['Hometown'] == 'Visayas') & 
-               (Vsys['Math'] < 70), 
-               ['Name', 'Gender', 'Track', 'Math']] 
+          Vis = Vsys.loc[(Vsys['Hometown'] == 'Visayas') & #finds the hometown visayas in the hometown column
+               (Vsys['Math'] < 70), #finds every grade in the math row with less than 70
+               ['Name', 'Gender', 'Track', 'Math']] #output the rows name, gender, track, and math
           Vis
 
 
@@ -28,10 +28,10 @@ b.  Instru = [“Name”, “GEAS”, “Electronics >70”]; where track is con
 
 Code:
 
-          Instru = Vsys.loc[(Vsys['Track'] == 'Instrumentation') & 
-                  (Vsys['Hometown'] == 'Luzon') & 
-                  (Vsys['Electronics'] > 70), 
-                  ['Name', 'GEAS', 'Electronics']] 
+          Instru = Vsys.loc[(Vsys['Track'] == 'Instrumentation') & #finds the track instrumentation in the track column
+                  (Vsys['Hometown'] == 'Luzon') & #finds every hometown in its row with the hometown luzon
+                  (Vsys['Electronics'] > 70), #finds every grade in the electronics column with greater than 70
+                  ['Name', 'GEAS', 'Electronics']] #output the rows name,geas,and electronics
           Instru
 
 Output:  
@@ -42,11 +42,11 @@ c. Mindy = [ “Name”, “Track”, “Electronics”, “Average >=55”]; wh
 
 Code:
 
-         Vsys['Average'] = Vsys[['Math', 'Electronics', 'GEAS', 'Communication']].mean(axis=1) 
+         Vsys['Average'] = Vsys[['Math', 'Electronics', 'GEAS', 'Communication']].mean(axis=1) #compute the average of all the subjects of students and add as a new column
 
-         Vsys.loc [(Vsys['Gender'] == 'Female') & 
-         (Vsys['Hometown'] == 'Mindanao') & 
-         (Vsys['Average'] >= 55),  
+         Vsys.loc [(Vsys['Gender'] == 'Female') & # locate female students using .loc
+         (Vsys['Hometown'] == 'Mindanao') & #finds every hometown in its row with the hometown mindanao
+         (Vsys['Average'] >= 55),  #locate average grades with greater or equal to 55
          ['Name', 'Track', 'Electronics', 'Average']] #print columns name, track, electronics, and average
 
 Ouput: 
