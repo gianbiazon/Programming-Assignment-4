@@ -55,6 +55,8 @@ Ouput:
 
 Analysis:
 
+The code can be effective by using the syntax ".loc[]" in Pandas, it is used for finding rows depending on conditions provided. Conditions like verifying the hometown or comparing grades are placed within ".loc[]", and the "&" operator is used to string together two or more conditions simultaneously. Following filtering, a list of the column names to display only the required information such as the name of the student, gender, track, and grades. The ".mean(axis=1)" function is significant as it calculates the mean of each student's grade across various subjects, which can then be utilized for additional filtering. These syntaxes are necessary as they make the code efficient in choosing the appropriate rows, calculating new values, and displaying the output in a neat way.
+
 
 Problem #2 - Create a visualization that shows how the different features contributes to average grade. Does chosen track in college, gender, or hometown contributes to a higher average score?
 
@@ -114,4 +116,7 @@ Output:
 
 
 Analysis:
+
+The most important syntax in the code is ".mean(axis=1)", which generates a new column named "average" based on calculating the total grade of every student by subject. The use of ".groupby()" together with ".mean()" is utilized to calculate the average scores per Track, Gender, or Hometown, by answering directly whether these tracks lead to higher averages. For the purpose of visualization, "plt.bar()" is used with "avg.index" on the x-axis and "avg.values" on the y-axis, and arguments such as "color", "plt.title()", "plt.xlabel()", and "plt.ylabel()" are used to display the graphs that are neat and easier to understand. Lastly, "plt.show()" shows the output, displaying the graphs useful for understanding how track, gender, or hometown affects the total average grade.
+
 
